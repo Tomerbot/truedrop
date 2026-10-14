@@ -1,0 +1,208 @@
+{
+  "serve": "C:/Users/User/Desktop/money/projects/truedrop",
+  "path": "index.html?seed=76",
+  "viewport": [
+    1280,
+    720
+  ],
+  "scale": 1.5,
+  "output": "C:/Users/User/Downloads/TrueDrop_demo.mp4",
+  "voice": "en-US-AndrewNeural",
+  "voice_rate": "+0%",
+  "max_seconds": 300,
+  "setup": [
+    {
+      "wait": 2600
+    }
+  ],
+  "steps": [
+    {
+      "say": "Games print their odds in tiny letters. Legendary skin: zero point six percent. But what does zero point six percent actually cost you?",
+      "caption": "Games print the odds: \"Legendary 0.6%\". But what does 0.6% cost you?",
+      "do": [
+        {
+          "wait": 300
+        }
+      ],
+      "min": 4
+    },
+    {
+      "say": "This is TrueDrop. You type the odds your game publishes, and it plays a hundred thousand pretend players to find out.",
+      "caption": "TrueDrop plays 100,000 pretend players with your game's odds.",
+      "do": [
+        {
+          "hover": "#chance"
+        }
+      ]
+    },
+    {
+      "say": "Let's try a gacha banner: zero point six percent per pull, two dollars a pull, and a guarantee after ninety pulls.",
+      "caption": "Example: 0.6% per pull, $2 a pull, guaranteed after 90 pulls.",
+      "do": [
+        {
+          "click": "[data-preset=banner]"
+        }
+      ]
+    },
+    {
+      "say": "Every dot is a group of players. The crowd stacks up by how much each player paid.",
+      "do": [
+        {
+          "hover": "#crowd"
+        }
+      ]
+    },
+    {
+      "say": "Look at the column on the right. Over fifty-eight thousand players never got lucky. They paid all the way to the guarantee.",
+      "caption": "58,400 players never got lucky. They paid all the way to the guarantee.",
+      "do": [
+        {
+          "wait": 300
+        }
+      ]
+    },
+    {
+      "say": "The receipt prints the truth. A typical player pays a hundred and eighty dollars. That's eighteen weeks of allowance.",
+      "caption": "Typical player: $180. That's 18 weeks of allowance.",
+      "do": [
+        {
+          "hover": "#receipt"
+        }
+      ]
+    },
+    {
+      "say": "And TrueDrop checks itself: the simulated average matches the exact probability formula.",
+      "caption": "The simulation matches the exact probability math.",
+      "do": [
+        {
+          "wait": 300
+        }
+      ]
+    },
+    {
+      "say": "Now a card pack with no guarantee: one percent per pack, a dollar ninety-nine each.",
+      "caption": "Card pack: 1% per pack, $1.99 each, no guarantee.",
+      "do": [
+        {
+          "click": "[data-preset=pack]"
+        }
+      ]
+    },
+    {
+      "say": "Without a guarantee, the unlucky tail just keeps going. One in ten players pays over four hundred and fifty dollars.",
+      "caption": "No guarantee: 1 in 10 players pays over $450.",
+      "do": [
+        {
+          "wait": 300
+        }
+      ]
+    },
+    {
+      "say": "What if I need three copies to max out my card? I change one number and run it again.",
+      "caption": "Need 3 copies? Change one number.",
+      "do": [
+        {
+          "fill": [
+            "#copies",
+            ""
+          ]
+        },
+        {
+          "type": [
+            "#copies",
+            "3"
+          ]
+        },
+        {
+          "click": "#simulate"
+        }
+      ]
+    },
+    {
+      "say": "Three copies, and the typical cost jumps to five hundred and thirty dollars. That's a whole year of allowance.",
+      "caption": "3 copies: $531 for a typical player. A whole year of allowance.",
+      "do": [
+        {
+          "hover": "#receipt"
+        }
+      ]
+    },
+    {
+      "say": "Numbers are one thing. Feeling it is another. So you can also pull for free, with pretend money.",
+      "caption": "Feel it: pull for free with pretend money.",
+      "do": [
+        {
+          "click": "#tab-try"
+        }
+      ]
+    },
+    {
+      "say": "I pull ten times. Then ten more. Still nothing gold, and the pretend bill keeps growing.",
+      "do": [
+        {
+          "click": "#pull10"
+        },
+        {
+          "wait": 1900
+        },
+        {
+          "click": "#pull10"
+        },
+        {
+          "wait": 1900
+        }
+      ]
+    },
+    {
+      "say": "One more time.",
+      "do": [
+        {
+          "click": "#pull10"
+        },
+        {
+          "wait": 1900
+        }
+      ]
+    },
+    {
+      "say": "There it is! Legendary after twenty-eight pulls. With real money that's fifty-five dollars, and twenty-four percent of players get it cheaper.",
+      "caption": "Legendary after 28 pulls: $55.72 with real money.",
+      "do": [
+        {
+          "scroll_to": "#verdict"
+        }
+      ]
+    },
+    {
+      "say": "You can save any receipt as an image and send it to a friend before they spend.",
+      "caption": "Save the receipt and share it before a friend spends.",
+      "do": [
+        {
+          "click": "#tab-sim"
+        },
+        {
+          "hover": "#save"
+        }
+      ]
+    },
+    {
+      "say": "TrueDrop is plain JavaScript. The simulation runs in a Web Worker, the crowd is drawn on a canvas, and a seeded random generator makes every run repeatable.",
+      "caption": "Plain JavaScript: a Web Worker, a canvas, and a seeded random generator.",
+      "do": [
+        {
+          "wait": 300
+        }
+      ]
+    },
+    {
+      "say": "TrueDrop. See the real price before you pull. Built with help from Claude.",
+      "caption": "TrueDrop: see the real price before you pull. Built with help from Claude.",
+      "do": [
+        {
+          "wait": 300
+        }
+      ],
+      "min": 5
+    }
+  ]
+}

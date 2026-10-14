@@ -1,0 +1,11 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Videos and big exports stay out of the repo
+*.mp4
+*.mov
+*.csv
+node_modules/

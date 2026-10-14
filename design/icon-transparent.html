@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  html, body { margin: 0; width: 1024px; height: 1024px; background: transparent; }
+  .bg { width: 1024px; height: 1024px; background: #2B1D5E; display: grid; place-items: center; }
+  body.transparent .bg { background: transparent; }
+</style></head>
+<body class="transparent">
+<div class="bg">
+  <svg width="1024" height="1024" viewBox="0 0 1024 1024">
+    <!-- the crowd: lucky (blue), everyone else (lilac), unlucky (red) -->
+    <g fill="#CFC4FF">
+      <circle cx="402" cy="700" r="40"/><circle cx="512" cy="700" r="40"/><circle cx="622" cy="700" r="40"/>
+      <circle cx="347" cy="804" r="40"/><circle cx="457" cy="804" r="40"/><circle cx="567" cy="804" r="40"/><circle cx="677" cy="804" r="40"/>
+    </g>
+    <circle cx="237" cy="804" r="40" fill="#57B8FF"/>
+    <circle cx="787" cy="804" r="40" fill="#FF6B57"/>
+    <!-- the legendary drop -->
+    <g transform="translate(512 350) rotate(45)">
+      <rect x="-165" y="-165" width="330" height="330" rx="44" fill="#FFB627"/>
+      <path d="M-165 -121 a44 44 0 0 1 44 -44 h120 l-164 164 z" fill="#FFD98A"/>
+    </g>
+  </svg>
+</div>
+</body></html>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TrueDrop: what a drop rate really costs</title>
+<meta name="description" content="Type the odds your game publishes. TrueDrop plays 100,000 pretend players and shows what the item really costs.">
+<meta name="theme-color" content="#2B1D5E">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Rubik:wght@400;500;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="./"><img src="assets/icon.png" alt="" width="34" height="34">TrueDrop</a>
+  <nav class="modes" role="tablist" aria-label="Mode">
+    <button role="tab" id="tab-sim" aria-controls="view-sim" aria-selected="true">Simulate 100,000 players</button>
+    <button role="tab" id="tab-try" aria-controls="view-try" aria-selected="false" tabindex="-1">Try pulling for free</button>
+  </nav>
+</header>
+
+<main>
+  <section id="view-sim" class="view sim" role="tabpanel" aria-labelledby="tab-sim">
+    <form id="odds" class="panel odds" novalidate>
+      <h1>What does a drop rate really cost?</h1>
+      <p class="lede">Type your game's odds. TrueDrop plays 100,000 pretend players and shows what they paid.</p>
+
+      <div class="presets" role="group" aria-label="Example odds">
+        <button type="button" data-preset="banner">Gacha banner</button>
+        <button type="button" data-preset="pack">Card pack</button>
+        <button type="button" data-preset="chest">Mystery chest</button>
+      </div>
+      <p class="hint">Example numbers, not any real game.</p>
+
+      <label class="row" for="chance">Chance per pull
+        <span class="field"><input id="chance" name="chance" inputmode="decimal" autocomplete="off" value="0.6"><span>%</span></span>
+      </label>
+      <label class="row" for="price">Price per pull
+        <span class="field">
+          <select id="currency" name="currency" aria-label="Currency">
+            <option value="$">$</option><option value="€">€</option><option value="£">£</option><option value="₪">₪</option>
+          </select>
+          <input id="price" name="price" inputmode="decimal" autocomplete="off" value="2.00">
+        </span>
+      </label>
+      <label class="row" for="pity">Guaranteed after
+        <span class="field"><input id="pity" name="pity" inputmode="numeric" autocomplete="off" value="90" placeholder="none"><span>pulls</span></span>
+      </label>
+      <p class="hint">The "pity" rule. Leave it empty if there's none.</p>
+      <label class="row" for="copies">Copies you need
+        <span class="field"><input id="copies" name="copies" inputmode="numeric" autocomplete="off" value="1"></span>
+      </label>
+      <label class="row" for="allowance">Weekly allowance
+        <span class="field"><span class="cur">$</span><input id="allowance" name="allowance" inputmode="decimal" autocomplete="off" value="10"></span>
+      </label>
+
+      <button class="go" type="submit" id="simulate">Simulate 100,000 players</button>
+      <p class="error" id="form-error" role="alert"></p>
+    </form>
+
+    <figure class="panel crowd">
+      <div class="crowd-head">
+        <h2>The crowd</h2>
+        <p id="crowd-caption">Every dot is a group of players, stacked by how much they paid.</p>
+      </div>
+      <canvas id="crowd" role="img" aria-label="Chart of how much 100,000 players paid"></canvas>
+      <figcaption class="legend">
+        <span class="key lucky">Luckiest 10%</span>
+        <span class="key middle">Everyone else</span>
+        <span class="key unlucky">Unluckiest 10%</span>
+      </figcaption>
+    </figure>
+
+    <aside class="receipt-slot" aria-label="Results">
+      <div class="receipt" id="receipt" aria-live="polite"></div>
+      <button type="button" class="ghost" id="save" disabled>Save receipt as image</button>
+    </aside>
+  </section>
+
+  <section id="view-try" class="view try" role="tabpanel" aria-labelledby="tab-try" hidden>
+    <div class="panel machine">
+      <h1>Pull without paying</h1>
+      <p class="lede" id="try-odds"></p>
+      <div class="pull-buttons">
+        <button type="button" class="go" id="pull1">Pull once</button>
+        <button type="button" class="go alt" id="pull10">Pull 10 times</button>
+      </div>
+      <dl class="meter">
+        <div><dt>Pulls</dt><dd id="m-pulls">0</dd></div>
+        <div><dt>Pretend money spent</dt><dd id="m-spent">$0.00</dd></div>
+        <div><dt>Legendaries</dt><dd id="m-legend">0</dd></div>
+      </dl>
+      <div class="pity" id="pity-box">
+        <div class="pity-label"><span>Pity</span><span id="pity-text"></span></div>
+        <div class="pity-bar"><div id="pity-fill"></div></div>
+      </div>
+      <button type="button" class="ghost" id="reset-try">Start over</button>
+    </div>
+    <div class="panel shelf">
+      <h2>Last 10 pulls</h2>
+      <ol class="tiles" id="tiles" aria-live="polite"></ol>
+      <div class="verdict" id="verdict" aria-live="polite" hidden></div>
+      <p class="hint">Epic, rare and common rarities are just for show. Only the legendary uses your odds.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  Made with plain JavaScript, a Web Worker and a canvas. Built with help from Claude.
+  <a href="https://github.com/Tomerbot/truedrop">Source code</a>
+</footer>
+
+<script src="js/rng.js"></script>
+<script src="js/crowd.js"></script>
+<script src="js/receipt.js"></script>
+<script src="js/try.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
