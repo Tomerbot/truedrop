@@ -4,7 +4,10 @@
 
 Type the odds your game publishes. TrueDrop plays 100,000 pretend players, stacks them into a crowd by how much each one paid, and prints the answer as a receipt: what a lucky player pays, what a typical player pays, what the unlucky ones pay, and how many weeks of allowance that is.
 
-**Live demo:** https://tomerbot.github.io/truedrop/
+**Live demo:** https://tomerbot.github.io/truedrop/  
+**Demo video:** https://www.youtube.com/watch?v=Y5pIQH6zybw
+
+![TrueDrop: 100,000 pretend players stacked by how much they paid, and the receipt](submission/screenshots/1-gacha-banner.png)
 
 ## What it does
 - **Simulate 100,000 players.** Chance per pull, price per pull, an optional guarantee ("pity" after N pulls), how many copies you need, and your weekly allowance.

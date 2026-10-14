@@ -5,7 +5,7 @@
 
 **Project name:** TrueDrop
 
-**Tagline (short):** 0.6% sounds small. TrueDrop plays 100,000 pretend players to show what a drop rate really costs.
+**Elevator pitch / tagline:** 0.6% sounds small. TrueDrop plays 100,000 pretend players to show what a drop rate really costs.
 
 **Built with:** javascript, html5, css3, canvas, web-workers, github-pages, claude
 
@@ -13,7 +13,7 @@
 - https://tomerbot.github.io/truedrop/
 - https://github.com/Tomerbot/truedrop
 
-**Video:** (YouTube link, `watch?v=` form)
+**Video:** https://www.youtube.com/watch?v=Y5pIQH6zybw
 
 ---
 
